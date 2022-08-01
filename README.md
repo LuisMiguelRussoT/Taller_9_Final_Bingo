@@ -15,7 +15,8 @@ access to http://localhost:3000/login
 
 ## Instructions
 
-###Game login
+### Game login
+
 this is the first view here is posible to login to a game with an existent user or creating a new user for the game
 ![login](https://user-images.githubusercontent.com/106569986/182104555-54b31c1f-2efb-4bd5-bffc-b2024c752c53.png)
 ***

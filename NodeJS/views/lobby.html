@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>lobby</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <p style="display: none;" >Access-Control-Allow-Origin: * </p>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
+    <script src="./js/lobby.js"></script>
+    <script src="./js/validateWinner.js"></script>
+       
+</head>
+
+<body id="body">
+     <div id="info">
+        <h3 id="username"><p>user</p> </h3>
+        <h5 id="userid"></h5>
+                
+     </div>
+
+   
+
+    <h1 class="top">TABLA DEL JUEGO</h1>
+
+    <div id="ballot"></div>
+    
+    <br><br>
+    <h4>A ballot will generated every 5 seconds</h4>
+
+    <h1 class="top">TABLA DEL JUGADOR</h1>
+
+    <table class="userTable toprow">
+        <tr>
+            <td>B</td>
+            <td>I</td>
+            <td>N</td>
+            <td>G</td>
+            <td>O</td>
+        </tr>
+    </table>
+
+    <div id="table"></div>
+
+    
+<div id="bingo-btn" >  
+ <button class="button"onclick="validateWinner()"> BINGO!!!!</button>
+</div>
+
+</body>
+
+
+
+

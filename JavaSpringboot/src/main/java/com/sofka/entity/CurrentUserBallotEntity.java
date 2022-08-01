@@ -1,14 +1,24 @@
 package com.sofka.entity;
 
+/**
+ * imports
+ */
 
 import lombok.Getter;
 import lombok.Setter;
-
 import javax.persistence.*;
+
+/**
+ * Entity
+ *
+ * @author luis miguel russo tinjaca
+ * @version 1.0.0 2022/08/01
+ * @since 1.0.0
+ */
 
 @Setter
 @Getter
-@Entity // Lo hace como una tabla
+@Entity
 @Table(name = "current_user_ballot") // asignar nombre de la tabla para identificarla
 public class CurrentUserBallotEntity {
 

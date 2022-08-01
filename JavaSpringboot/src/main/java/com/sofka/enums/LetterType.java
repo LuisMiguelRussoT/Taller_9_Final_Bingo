@@ -1,7 +1,19 @@
 package com.sofka.enums;
 
+/**
+ * imports
+ */
+
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+
+/**
+ * Enum
+ *
+ * @author luis miguel russo tinjaca
+ * @version 1.0.0 2022/08/01
+ * @since 1.0.0
+ */
 
 @RequiredArgsConstructor
 @Getter()

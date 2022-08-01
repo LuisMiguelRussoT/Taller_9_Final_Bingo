@@ -1,9 +1,20 @@
 package com.sofka.entity;
+/**
+ * import
+ */
 
 import lombok.Getter;
 import lombok.Setter;
-
 import javax.persistence.*;
+
+
+/**
+ * Entity
+ *
+ * @author luis miguel russo tinjaca
+ * @version 1.0.0 2022/08/01
+ * @since 1.0.0
+ */
 
 @Getter
 @Setter

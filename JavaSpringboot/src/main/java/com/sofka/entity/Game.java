@@ -1,11 +1,22 @@
 package com.sofka.entity;
 
+/**
+ * imports
+ */
+
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
-
 import javax.persistence.*;
 import java.util.Date;
+
+/**
+ * Entity
+ *
+ * @author luis miguel russo tinjaca
+ * @version 1.0.0 2022/08/01
+ * @since 1.0.0
+ */
 
 @Setter
 @Getter

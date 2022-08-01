@@ -10,7 +10,13 @@ Taller final BINGO canteras # 2 - SOFKA
 ```bash
 npm install
 ```
+
+```bash
+npm run dev
+```
+
 to start a game:
+
 access to http://localhost:3000/login
 
 ## Instructions

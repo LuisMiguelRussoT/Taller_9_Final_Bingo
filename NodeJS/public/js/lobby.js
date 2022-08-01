@@ -1,41 +1,45 @@
 tableCreateBingo();
+/**
+ * function to validate if user is able to mark a ballot on the board
+ */
 function dothis() {
-    
-
     axios.get('http://localhost:9090/allballot/1').then(resp => {
         console.log("seleccionaste " + this.value);
-      
+
         resp.data.forEach(element => {
 
             if (element.number == this.id) {
                 document.getElementById(this.id).setAttribute("style", "background-color: red");
                 document.getElementById(this.id).removeEventListener("click", dothis);
 
-
-
                 let bodySelectBallot = {
-                    "user_id" : document.getElementById("userid").innerHTML,
-                    "idGame" : 1,
-                    "letter" : element.letter,
-                    "number" : element.number,
+                    "user_id": document.getElementById("userid").innerHTML,
+                    "idGame": 1,
+                    "letter": element.letter,
+                    "number": element.number,
                 }
 
-                
-                axios.post('http://localhost:9090/playgame',bodySelectBallot).then(response => {
+                axios.post('http://localhost:9090/playgame', bodySelectBallot).then(response => {
                     console.log('response :>> ', response);
-                  
                 });
             }
         })
-  
     });
 }
 
+
+/**
+ * timer to generate a ballot every 5 seconds
+ */
 
 setInterval(function () {
     tableCreateBingo();
 }, 5000);
 
+
+/**
+ * function to draw the table for the user on the frontend
+ */
 function tableCreateUser() {
 
     axios.get('http://localhost:9090/table/' + location.hash.substring(1)).then(resp => {
@@ -43,17 +47,13 @@ function tableCreateUser() {
         document.getElementById("username").innerHTML = location.search.substring(1);
         document.getElementById("userid").innerHTML = location.hash.substring(1);
 
-
         var numbersB = resp.data.letters[0].numbers;
         var numbersI = resp.data.letters[1].numbers;
         var numbersN = resp.data.letters[2].numbers;
         var numbersG = resp.data.letters[3].numbers;
         var numbersO = resp.data.letters[4].numbers;
 
-
         console.log(numbersB, numbersI, numbersN, numbersG, numbersO);
-
-
         console.log(numbersB);
 
         var body = document.getElementById('table');
@@ -68,7 +68,7 @@ function tableCreateUser() {
                 if (i == 2 && j == 2) {
                     var td = document.createElement('button');
                     td.innerHTML = "BINGO"
-                    td.setAttribute("style","background-color : #0080d5")
+                    td.setAttribute("style", "background-color : #0080d5")
                     td.appendChild(document.createTextNode('\u0020'))
                     tr.appendChild(td)
 
@@ -83,7 +83,6 @@ function tableCreateUser() {
                     td.appendChild(document.createTextNode('\u0020'))
                     tr.appendChild(td)
                     td.addEventListener("click", dothis)
-
                 }
             }
             tbdy.appendChild(tr);
@@ -94,45 +93,42 @@ function tableCreateUser() {
     }).catch(function (error) {
         window.alert(error);
     });
-
-
 }
 
 
 tableCreateUser();
 
+/**
+ * function to create the table bingo will all ballots
+ */
+
 function tableCreateBingo() {
 
     axios.get('http://localhost:9090/get-winner-game').then(respWinner => {
 
-        if(respWinner.data.idwinner != null){
-            location.replace("http://localhost:3000/winner?"+respWinner.data.idwinner);
-        }else{
+        if (respWinner.data.idwinner != null) {
+            location.replace("http://localhost:3000/winner?" + respWinner.data.idwinner);
+        } else {
 
-        axios.get('http://localhost:9090/ballot/1').then(resp => {
+            axios.get('http://localhost:9090/ballot/1').then(resp => {
 
-            $('#ballot').empty();
-    
-            
-    
-            resp.data.forEach(element => {
-    
-                var body = document.getElementById('ballot');
-                var div = document.createElement("div");
-                div.setAttribute("class", "circle");
-                div.innerText = element.letter + element.number;
-                body.appendChild(div);
-    
+                $('#ballot').empty();
+
+                resp.data.forEach(element => {
+
+                    var body = document.getElementById('ballot');
+                    var div = document.createElement("div");
+                    div.setAttribute("class", "circle");
+                    div.innerText = element.letter + element.number;
+                    body.appendChild(div);
+                });
+            }).catch(function (error) {
+                window.alert(error);
             });
-    
-    
-        }).catch(function (error) {
-            window.alert(error);
-        });
-    }
+        }
     });
 
-   
+
 
 
 

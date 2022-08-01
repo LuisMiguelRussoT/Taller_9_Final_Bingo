@@ -1,4 +1,7 @@
-
+/**
+ * logic to valideta if the user is able to press the winner button validate
+ * if the user complete a row, a column, a digonal or corners any of this
+ */
 function validateWinner(){
     let vertical = verticalValidation();
     let horizontal = horizontalValidation();
@@ -14,10 +17,7 @@ function validateWinner(){
             console.log('idWinner ' + idWinner);
             location.replace("http://localhost:3000/winner?"+idWinner);
         });
-        }
-
-       
-
+        }   
     }
 
 function verticalValidation (){

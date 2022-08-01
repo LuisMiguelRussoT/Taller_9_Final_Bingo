@@ -1,4 +1,6 @@
-
+/**
+ * logic to register user 
+ */
 const form = document.getElementById("registerForm")
 form.addEventListener("submit", (event) => {
     event.preventDefault();

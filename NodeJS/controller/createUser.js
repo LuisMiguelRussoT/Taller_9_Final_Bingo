@@ -5,7 +5,6 @@
 const modelUser = require("./../models/userStructure");
 
 const create = async (req, res) => {
-
     try {
         console.log(req.body);
         const {user,password} = req.body;
@@ -18,7 +17,6 @@ const create = async (req, res) => {
         res.status(500).send(error);
     }
 }
-
 
 module.exports = {
     create,}

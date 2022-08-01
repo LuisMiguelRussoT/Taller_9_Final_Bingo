@@ -1,9 +1,11 @@
+
+/**
+ * controller to load the lobby view
+ */
 const path = require('path');
 
-function load (req,res){
-
-    res.sendFile(path.join(__dirname,'../views/lobby.html'));
-   
+function load(req, res) {
+    res.sendFile(path.join(__dirname, '../views/lobby.html'));
 }
 
 module.exports = {

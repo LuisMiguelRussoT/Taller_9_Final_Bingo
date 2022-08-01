@@ -1,10 +1,13 @@
+/**
+ * validate login with mongoDB
+ */
+
 const formLogin = document.getElementById("loginform");
 
 form.addEventListener("submit", (event,resp) => {
    
    var cookies = location.search;
    console.log('cookies :>> ', cookies);
-
 
     event.preventDefault();
 
